@@ -103,7 +103,7 @@ export default function (pi: ExtensionAPI) {
 	});
 
 	pi.registerCommand("compact-tools", {
-		description: "Toggle compact built-in tool rendering: /compact-tools [on|off|toggle]",
+		description: "Toggle compact tool display",
 		handler: async (args, ctx) => {
 			const value = args.trim().toLowerCase();
 			if (value === "on" || value === "off") mode = value;
