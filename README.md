@@ -46,8 +46,6 @@ Then restart pi or run:
 
 Default mode is `on`.
 
-The footer status is a single Nerd Font icon: `󰈙`.
-
 ## Local development
 
 ```bash

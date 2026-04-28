@@ -93,11 +93,6 @@ function delegateRender(original: any, slot: "renderCall" | "renderResult", args
 	return new Text("", 0, 0);
 }
 
-function setStatus(_pi: ExtensionAPI, ctx: any) {
-	const icon = mode === "on" ? ctx.ui.theme.fg("accent", "󰈙") : ctx.ui.theme.fg("dim", "󰈙");
-	ctx.ui.setStatus("compact-tools", icon);
-}
-
 export default function (pi: ExtensionAPI) {
 	pi.on("session_start", async (_event, ctx) => {
 		for (const entry of ctx.sessionManager.getEntries()) {
@@ -105,7 +100,6 @@ export default function (pi: ExtensionAPI) {
 				mode = entry.data.mode === "off" ? "off" : "on";
 			}
 		}
-		setStatus(pi, ctx);
 	});
 
 	pi.registerCommand("compact-tools", {
@@ -119,7 +113,6 @@ export default function (pi: ExtensionAPI) {
 				return;
 			}
 			pi.appendEntry(STATE_TYPE, { mode });
-			setStatus(pi, ctx);
 			ctx.ui.notify(`compact-tools ${mode}`, "info");
 		},
 	});
