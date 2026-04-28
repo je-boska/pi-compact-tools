@@ -93,8 +93,9 @@ function delegateRender(original: any, slot: "renderCall" | "renderResult", args
 	return new Text("", 0, 0);
 }
 
-function setStatus(pi: ExtensionAPI, ctx: any) {
-	ctx.ui.setStatus("compact-tools", mode === "on" ? "compact-tools:on" : "compact-tools:off");
+function setStatus(_pi: ExtensionAPI, ctx: any) {
+	const icon = mode === "on" ? ctx.ui.theme.fg("accent", "󰈙") : ctx.ui.theme.fg("dim", "󰈙");
+	ctx.ui.setStatus("compact-tools", icon);
 }
 
 export default function (pi: ExtensionAPI) {

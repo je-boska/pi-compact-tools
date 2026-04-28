@@ -46,6 +46,20 @@ Then restart pi or run:
 
 Default mode is `on`.
 
+The footer status is a single Nerd Font icon: `󰈙`.
+
+## Local development
+
+```bash
+pi -e ./extensions/index.ts
+```
+
+Or symlink it into pi's global extensions folder:
+
+```bash
+ln -sfn "$PWD/extensions/index.ts" ~/.pi/agent/extensions/compact-tools.ts
+```
+
 ## Notes
 
 - This extension intentionally does **not** modify assistant messages or reasoning/thinking display.
