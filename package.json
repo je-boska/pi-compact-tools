@@ -1,0 +1,26 @@
+{
+  "name": "pi-compact-tools",
+  "version": "0.1.0",
+  "description": "Compact built-in tool rendering for pi.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi",
+    "tool-renderer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/je-boska/pi-compact-tools.git"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-tui": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/compact-tools.ts"
+    ]
+  }
+}
